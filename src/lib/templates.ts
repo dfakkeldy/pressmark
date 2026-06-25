@@ -1,4 +1,5 @@
 import { escapeCssString } from './escape'
+import { fontById } from './fonts'
 import type { DocumentSettings, TemplateId } from './types'
 
 interface TemplateTokens {
@@ -116,6 +117,10 @@ function academicCounters(templateId: TemplateId) {
 
 export function buildTemplateCss(settings: DocumentSettings, documentTitle: string) {
   const tokens = TOKENS[settings.templateId]
+  const selectedFont = fontById(settings.bodyFontId)
+  const bodyFont = selectedFont.cssStack ?? tokens.body
+  const bodySize = selectedFont.bodySize ?? tokens.bodySize
+  const lineHeight = selectedFont.lineHeight ?? tokens.lineHeight
   const title = escapeCssString(documentTitle)
   const pageNumbers = pageNumberContent(settings)
   const chapterBreaks = settings.startChaptersOnNewPage
@@ -138,7 +143,7 @@ export function buildTemplateCss(settings: DocumentSettings, documentTitle: stri
       --pm-accent: ${tokens.accent};
       --pm-rule: ${tokens.rule};
       --pm-code-bg: ${tokens.codeBackground};
-      --pm-body-font: ${tokens.body};
+      --pm-body-font: ${bodyFont};
       --pm-display-font: ${tokens.display};
       --pm-mono-font: ${tokens.mono};
     }
@@ -191,8 +196,8 @@ export function buildTemplateCss(settings: DocumentSettings, documentTitle: stri
       color: var(--pm-ink);
       background: var(--pm-paper);
       font-family: var(--pm-body-font);
-      font-size: ${tokens.bodySize};
-      line-height: ${tokens.lineHeight};
+      font-size: ${bodySize};
+      line-height: ${lineHeight};
       font-kerning: normal;
       text-rendering: optimizeLegibility;
     }

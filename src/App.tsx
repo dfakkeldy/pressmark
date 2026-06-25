@@ -16,8 +16,9 @@ import { PagedPreview } from './components/PagedPreview'
 import { DEFAULT_SETTINGS, TEMPLATES } from './lib/defaults'
 import { buildPagedDocument } from './lib/document'
 import { filesToMarkdown } from './lib/files'
+import { BODY_FONTS, fontById } from './lib/fonts'
 import { renderMarkdown } from './lib/markdown'
-import type { DocumentSettings, PagedDocument, PageNumberStyle, PageSize, TemplateId } from './lib/types'
+import type { BodyFontId, DocumentSettings, PagedDocument, PageNumberStyle, PageSize, TemplateId } from './lib/types'
 
 type PreviewStatus = 'idle' | 'rendering' | 'ready' | 'error'
 
@@ -68,6 +69,7 @@ function App() {
   }, [markdown, settings])
 
   const selectedTemplate = useMemo(() => templateById(settings.templateId), [settings.templateId])
+  const selectedFont = useMemo(() => fontById(settings.bodyFontId), [settings.bodyFontId])
 
   const setSetting = useCallback(
     <K extends keyof DocumentSettings>(key: K, value: DocumentSettings[K]) => {
@@ -164,6 +166,23 @@ function App() {
               <option value="letter">US Letter</option>
               <option value="a4">A4</option>
             </select>
+          </label>
+          <label className="font-field">
+            <span>Body font</span>
+            <select
+              value={settings.bodyFontId}
+              onChange={(event) => setSetting('bodyFontId', event.target.value as BodyFontId)}
+            >
+              {BODY_FONTS.map((font) => (
+                <option key={font.id} value={font.id}>{font.name}</option>
+              ))}
+            </select>
+            <small
+              className="font-preview"
+              style={{ '--font-preview-family': selectedFont.previewStack } as React.CSSProperties}
+            >
+              Aa Markdown to PDF
+            </small>
           </label>
           <label>
             <span>Margins</span>

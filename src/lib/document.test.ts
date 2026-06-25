@@ -37,4 +37,14 @@ describe('buildPagedDocument', () => {
     expect(document.css).toContain('content: none')
     expect(document.css).not.toContain('break-before: page;')
   })
+
+  it('uses the selected body font in generated paged CSS', () => {
+    const document = buildPagedDocument('<h1>Readable</h1><p>Body</p>', {
+      ...DEFAULT_SETTINGS,
+      bodyFontId: 'opendyslexic',
+    })
+
+    expect(document.css).toContain('--pm-body-font: "OpenDyslexic", "Atkinson Hyperlegible", Arial, sans-serif;')
+    expect(document.css).toContain('line-height: 1.68;')
+  })
 })

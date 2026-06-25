@@ -2,6 +2,7 @@ import type { DocumentSettings, TemplateDefinition } from './types'
 
 export const DEFAULT_SETTINGS: DocumentSettings = {
   templateId: 'editorial',
+  bodyFontId: 'template',
   pageSize: 'letter',
   marginMm: 18,
   includeCover: true,

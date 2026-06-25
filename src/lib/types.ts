@@ -4,8 +4,20 @@ export type PageSize = 'letter' | 'a4'
 
 export type PageNumberStyle = 'page' | 'page-of-total'
 
+export type BodyFontId =
+  | 'template'
+  | 'opendyslexic'
+  | 'lexend'
+  | 'helvetica'
+  | 'atkinson'
+  | 'inter'
+  | 'lato'
+  | 'merriweather'
+  | 'source-serif'
+
 export interface DocumentSettings {
   templateId: TemplateId
+  bodyFontId: BodyFontId
   pageSize: PageSize
   marginMm: number
   includeCover: boolean
@@ -38,4 +50,13 @@ export interface TemplateDefinition {
   name: string
   description: string
   accent: string
+}
+
+export interface BodyFontDefinition {
+  id: BodyFontId
+  name: string
+  cssStack?: string
+  previewStack: string
+  bodySize?: string
+  lineHeight?: string
 }

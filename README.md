@@ -20,6 +20,7 @@ Live site: https://dfakkeldy.github.io/pressmark/
   - Named cover page with no header, footer, or page number.
   - Break control for headings, tables, code, figures, and paragraphs.
 - Four self-hosted templates: Editorial Report, Technical Docs, Modern Minimal, and Academic Manuscript.
+- Selectable body fonts including OpenDyslexic, Lexend, Helvetica, Atkinson Hyperlegible, Inter, Lato, Merriweather, and Source Serif 4.
 - Production service worker for offline use after first load.
 
 ## Run
