@@ -126,6 +126,6 @@ export async function renderMarkdown(markdown: string) {
     ADD_ATTR: ['target', 'rel', 'checked', 'style', 'aria-hidden'],
     ADD_TAGS: ['math'],
     ALLOWED_URI_REGEXP:
-      /^(?:(?:https?|mailto|tel):|data:image\/(?:png|gif|jpeg|jpg|webp|svg\+xml);|#|\/|\.\/|\.\.\/)/i,
+      /^(?:(?:https?|mailto|tel):|data:image\/(?:png|gif|jpeg|jpg|webp|svg\+xml);|#|\/|\.\/|\.\.\/|[^:]+$)/i,
   })
 }

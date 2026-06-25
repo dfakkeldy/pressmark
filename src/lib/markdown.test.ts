@@ -21,4 +21,10 @@ const page = 'ready'
     expect(html).toContain('class="shiki')
     expect(html).toContain('const')
   })
+
+  it('keeps bare relative image sources for static deployments', async () => {
+    const html = await renderMarkdown('![Pipeline](sample-figure.svg)')
+
+    expect(html).toContain('src="sample-figure.svg"')
+  })
 })
