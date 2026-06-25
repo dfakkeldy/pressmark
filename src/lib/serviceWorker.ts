@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pressmark-static-v1'
+const CACHE_NAME = 'pressmark-static-v2'
 
 async function warmRuntimeCache(base: string) {
   if (!('caches' in window)) return
@@ -9,7 +9,6 @@ async function warmRuntimeCache(base: string) {
     new URL(`${base}sample-figure.svg`, window.location.href).href,
     new URL(`${base}favicon.svg`, window.location.href).href,
     new URL(`${base}icons.svg`, window.location.href).href,
-    new URL(`${base}sw.js`, window.location.href).href,
   ])
 
   performance.getEntriesByType('resource').forEach((entry) => {
