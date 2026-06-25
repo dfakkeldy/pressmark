@@ -22,7 +22,9 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
-      const cached = await cache.match(request)
+      const cached =
+        (await cache.match(request, { ignoreVary: true })) ||
+        (await cache.match(request.url, { ignoreVary: true }))
       if (cached) return cached
 
       try {
@@ -31,7 +33,10 @@ self.addEventListener('fetch', (event) => {
         return response
       } catch (error) {
         if (request.mode === 'navigate') {
-          const fallback = await cache.match('./') || await cache.match('/')
+          const fallback =
+            (await cache.match(request.url, { ignoreVary: true })) ||
+            (await cache.match('./', { ignoreVary: true })) ||
+            (await cache.match('/', { ignoreVary: true }))
           if (fallback) return fallback
         }
         throw error
