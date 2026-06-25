@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Paged media pipeline</title>
+  <desc id="desc">A diagram showing Markdown flowing through parsing, template CSS, Paged.js pagination, and PDF export.</desc>
+  <rect width="960" height="420" fill="#f7faf7"/>
+  <path d="M56 280 C 190 110, 320 108, 456 204 S 720 318, 900 150" fill="none" stroke="#a35638" stroke-width="10" stroke-linecap="round"/>
+  <g font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#18211d">
+    <text x="74" y="115">Markdown</text>
+    <text x="300" y="115">HTML</text>
+    <text x="500" y="115">Paged.js</text>
+    <text x="735" y="115">PDF</text>
+  </g>
+  <g fill="#ffffff" stroke="#cfd8d1" stroke-width="2">
+    <rect x="60" y="150" width="150" height="150"/>
+    <rect x="280" y="150" width="150" height="150"/>
+    <rect x="500" y="150" width="150" height="150"/>
+    <rect x="720" y="150" width="150" height="150"/>
+  </g>
+  <g stroke="#18211d" stroke-width="4" stroke-linecap="round">
+    <path d="M88 185h94M88 214h72M88 244h104M88 273h62"/>
+    <path d="M308 185h94M308 214h72M308 244h104M308 273h62"/>
+    <path d="M532 180h86M532 206h86M532 232h86M532 258h86"/>
+    <path d="M752 188h86M752 218h86M752 248h86M752 278h50"/>
+  </g>
+  <g fill="#256d85" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600">
+    <text x="95" y="335">private input</text>
+    <text x="300" y="335">semantic structure</text>
+    <text x="500" y="335">page furniture</text>
+    <text x="742" y="335">save locally</text>
+  </g>
+</svg>
