@@ -8,7 +8,7 @@ This sample is intentionally long. It exercises headings, tables, footnotes, tas
 math, images, blockquotes, and code so Pressmark can prove that the hard part is not a
 decorative export button. The hard part is paged-media typesetting in the browser.
 
-![A local SVG figure showing the Pressmark pagination pipeline](/sample-figure.svg)
+![A local SVG figure showing the Pressmark pagination pipeline](sample-figure.svg)
 
 ## What Pressmark proves
 
