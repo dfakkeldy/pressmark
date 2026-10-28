@@ -1,7 +1,7 @@
 .app-shell {
   position: relative;
   display: grid;
-  grid-template-rows: auto auto auto minmax(0, 1fr);
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   min-height: 100svh;
   padding: 18px;
   gap: 14px;
@@ -86,6 +86,30 @@ h2 {
   color: #205d62;
   font-size: 13px;
   font-weight: 650;
+}
+
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 2px 0 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.app-footer a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--muted) 45%, transparent);
+  text-underline-offset: 2px;
+}
+
+.app-footer a:hover,
+.app-footer a:focus-visible {
+  color: var(--accent-strong);
 }
 
 .privacy-note svg,

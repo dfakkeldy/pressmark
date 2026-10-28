@@ -68,7 +68,8 @@ button:disabled {
   .export-bar,
   .preview-toolbar,
   .preview-error,
-  .drop-overlay {
+  .drop-overlay,
+  .app-footer {
     display: none !important;
   }
 
