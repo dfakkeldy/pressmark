@@ -22,6 +22,18 @@ describe('buildPagedDocument', () => {
     expect(document.css).toContain('string(pmChapter, start)')
   })
 
+  it('keeps the cover free of tool branding', () => {
+    const document = buildPagedDocument('<h1>Client Report</h1><p>Body</p>', {
+      ...DEFAULT_SETTINGS,
+      title: 'Client Report',
+      author: 'Jane Writer',
+    })
+
+    expect(document.bodyHtml).toContain('Client Report')
+    expect(document.bodyHtml).toContain('Jane Writer')
+    expect(document.bodyHtml).not.toMatch(/pressmark/i)
+  })
+
   it('honors furniture toggles', () => {
     const document = buildPagedDocument('<h1>No Cover</h1><p>Body</p>', {
       ...DEFAULT_SETTINGS,

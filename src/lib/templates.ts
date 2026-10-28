@@ -223,7 +223,6 @@ export function buildTemplateCss(settings: DocumentSettings, documentTitle: stri
       margin-bottom: 18mm;
     }
 
-    .pm-cover-kicker,
     .pm-cover-meta,
     .pm-toc-kicker {
       color: var(--pm-muted);

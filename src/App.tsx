@@ -296,6 +296,14 @@ function App() {
         </div>
       </section>
 
+      <footer className="app-footer">
+        <span>
+          Made by <a href="https://kinnokilabs.com/">KinNoKi Labs</a>
+        </span>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/dfakkeldy/pressmark">Source on GitHub</a>
+      </footer>
+
       {isDragging ? (
         <div className="drop-overlay">
           <FileText aria-hidden="true" />

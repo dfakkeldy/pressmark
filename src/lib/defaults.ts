@@ -12,7 +12,7 @@ export const DEFAULT_SETTINGS: DocumentSettings = {
   startChaptersOnNewPage: true,
   title: 'The Quiet Machinery of Great Documents',
   subtitle: 'A paged-media sample for Markdown, math, code, tables, and notes',
-  author: 'Pressmark',
+  author: 'Sample Author',
   date: new Date().toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'long',
