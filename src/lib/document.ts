@@ -49,7 +49,6 @@ function buildCover(settings: DocumentSettings, title: string) {
   return `
     <section class="pm-cover" aria-label="Cover">
       <div class="pm-cover-rule"></div>
-      <p class="pm-cover-kicker">Pressmark private preview</p>
       <h1>${escapeHtml(title)}</h1>
       ${subtitle ? `<p class="pm-cover-subtitle">${escapeHtml(subtitle)}</p>` : ''}
       ${meta ? `<p class="pm-cover-meta">${meta}</p>` : ''}
